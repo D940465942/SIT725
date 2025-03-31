@@ -36,6 +36,10 @@ button:hover {
     font-weight: bold;
 }
 
+nav {
+    background-color: green;
+}
+
 .navbar-size {
     width: 95%;
     margin: 0 auto;
@@ -49,7 +53,6 @@ button:hover {
 .main-body {
     background-color: green;
     color: white;
-    height: calc(100vh - 64px);
 }
 
 .materialboxed-image {

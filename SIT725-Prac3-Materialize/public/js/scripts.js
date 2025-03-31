@@ -13,7 +13,6 @@ const cardList = [
     }
 ]
 
-
 const clickMe = () => {
     alert("Thanks for clicking me. Hope you have a nice day!")
 }
@@ -49,31 +48,6 @@ $(document).ready(function () {
     $('#clickMeButton').click(() => {
         clickMe();
     })
+    addCards(cardList);
 });
 
-
-$(document).ready(function () {
-    const num1 = document.getElementById('num1').value;
-    const num2 = document.getElementById('num2').value;
-    const operation = document.getElementById('operation').value;
-
-    // Send POST request to the server
-    fetch('/calculate', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json',},
-        body: JSON.stringify({ num1, num2, operation }),
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.error) {
-            alert(data.error);
-        } else {
-            document.getElementById('result').textContent = data.result;
-            document.getElementById('resultContainer').style.display = 'block';
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('An error occurred while calculating.');
-    });
-});
